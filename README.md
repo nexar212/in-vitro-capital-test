@@ -2,6 +2,10 @@
 
 A modern web application for managing healthcare appointments, built with Next.js and focused on providing an accessible and user-friendly experience.
 
+## Live Demo
+
+Visit the deployed application at: [https://in-vitro-capital-test.vercel.app/](https://in-vitro-capital-test.vercel.app/)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
