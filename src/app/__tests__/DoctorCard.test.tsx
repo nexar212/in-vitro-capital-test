@@ -14,14 +14,21 @@ const mockDoctor = {
   }
 };
 
-
 describe('DoctorCard', () => {
   it('renders doctor information correctly', () => {
     render(<DoctorCard doctor={mockDoctor} onBookAppointment={() => {}} />);
     
+    // Verificar el nombre del doctor
     expect(screen.getByText('Dr. Test')).toBeTruthy();
-    expect(screen.getByText('Testing')).toBeTruthy();
-    expect(screen.getByText('Test Location')).toBeTruthy();
+    
+    // Verificar la especialidad (texto completo como aparece en el componente)
+    expect(screen.getByText('Specialty: Testing')).toBeTruthy();
+    
+    // Verificar la ubicación (texto completo como aparece en el componente)
+    expect(screen.getByText('Location: Test Location')).toBeTruthy();
+    
+    // Verificar que el botón está presente
+    expect(screen.getByRole('button', { name: /book appointment/i })).toBeTruthy();
   });
 
   it('calls onBookAppointment when button is clicked', () => {
@@ -31,4 +38,4 @@ describe('DoctorCard', () => {
     fireEvent.click(screen.getByText('Book Appointment'));
     expect(mockOnBook).toHaveBeenCalledWith(mockDoctor);
   });
-}); 
+});
