@@ -37,7 +37,7 @@ Before you begin, ensure you have the following installed on your system:
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/nexar212/in-vitro-capital-test.git
 ```
 
 2. Install dependencies:
