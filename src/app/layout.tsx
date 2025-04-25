@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://healthcare-platform.com',
+    url: 'https://in-vitro-capital-test.vercel.app',
     siteName: 'Healthcare Platform',
     title: 'Healthcare Platform - Book Your Medical Appointment',
     description: 'Find and book appointments with top healthcare professionals. Easy scheduling with specialists in Cardiology, Dermatology, Pediatrics and more.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code', // Si tienes Google Search Console
   },
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://in-vitro-capital-test.vercel.app',
   },
   manifest: '/manifest.json',
   icons: {

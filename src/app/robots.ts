@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'http://localhost:3000/sitemap.xml',
-    host: 'http://localhost:3000',
+    sitemap: 'https://in-vitro-capital-test.vercel.app/sitemap.xml',
+    host: 'https://in-vitro-capital-test.vercel.app',
   }
 } 
