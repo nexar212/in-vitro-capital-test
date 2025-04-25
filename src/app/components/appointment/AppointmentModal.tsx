@@ -94,7 +94,7 @@ export function AppointmentModal({ doctor, isOpen, onClose }: AppointmentModalPr
           </button>
         </div>
 
-        <div id="modal-description" className="space-y-4">
+        <div className="space-y-4">
           <div role="group" aria-labelledby="date-label">
             <label 
               id="date-label"
@@ -105,15 +105,15 @@ export function AppointmentModal({ doctor, isOpen, onClose }: AppointmentModalPr
             </label>
             <select
               id="date"
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
-                       focus:border-blue-900 focus:ring-blue-200"
+              className="mt-1 block w-full p-2 text-gray-900 bg-white border rounded-md shadow-sm
+                       focus:border-blue-500 focus:ring-blue-500"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
               aria-required="true"
             >
-              <option value="">Choose a date</option>
+              <option value="" className="text-gray-900">Choose a date</option>
               {doctor.availability.days.map((day) => (
-                <option key={day} value={day}>
+                <option key={day} value={day} className="text-gray-900">
                   {day}
                 </option>
               ))}
@@ -130,19 +130,31 @@ export function AppointmentModal({ doctor, isOpen, onClose }: AppointmentModalPr
             </label>
             <select
               id="time"
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm 
-                       focus:border-blue-900 focus:ring-blue-200"
+              className="mt-1 block w-full p-2 text-gray-900 bg-white border rounded-md shadow-sm
+                       focus:border-blue-500 focus:ring-blue-500"
               value={selectedTime}
               onChange={(e) => setSelectedTime(e.target.value)}
               aria-required="true"
             >
-              <option value="">Choose a time</option>
-              {doctor.availability.hours.map((time) => (
-                <option key={time} value={time}>
+              <option value="" className="text-gray-900">Choose a time</option>
+              {getAvailableTimeSlots().map((time) => (
+                <option key={time} value={time} className="text-gray-900">
                   {time}
                 </option>
               ))}
             </select>
+          </div>
+
+          <div className="mt-6">
+            <Button
+              onClick={handleConfirm}
+              disabled={!selectedDate || !selectedTime}
+              fullWidth
+              variant="primary"
+              className="text-base font-medium"
+            >
+              Confirm Appointment
+            </Button>
           </div>
         </div>
       </div>
